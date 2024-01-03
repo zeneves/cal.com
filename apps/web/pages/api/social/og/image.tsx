@@ -53,6 +53,17 @@ export default async function handler(req: NextApiRequest) {
     interFontMedium,
   ]);
   const ogConfig = {
+    width: 640,
+    height: 480,
+    fonts: [
+      { name: "inter", data: interFontData, weight: 200 },
+      { name: "inter", data: interFontMediumData, weight: 250 },
+      { name: "cal", data: calFontData, weight: 200 },
+      { name: "cal", data: calFontData, weight: 300 },
+    ] as SatoriOptions["fonts"],
+  };
+
+ /* const ogConfig = {
     width: 1200,
     height: 630,
     fonts: [
@@ -61,7 +72,7 @@ export default async function handler(req: NextApiRequest) {
       { name: "cal", data: calFontData, weight: 400 },
       { name: "cal", data: calFontData, weight: 600 },
     ] as SatoriOptions["fonts"],
-  };
+  };*/
 
   switch (imageType) {
     case "meeting": {
