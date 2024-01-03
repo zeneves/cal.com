@@ -526,14 +526,14 @@ const nextConfig = {
       // Safer to enable the redirect only when the user is opting to test out organizations
       isOrganizationsEnabled &&
       // Prevent infinite redirect by checking that we aren't already on localhost
-      process.env.NEXT_PUBLIC_WEBAPP_URL !== "http://locaalhost:3000"
+      process.env.NEXT_PUBLIC_WEBAPP_URL !== "http://localhost:3000"
         ? [
             {
               has: [
                 {
                   type: "header",
                   key: "host",
-                  value: "localhost:3000",
+                  value: "locaalhost:3000",
                 },
               ],
               source: "/api/integrations/:args*",
